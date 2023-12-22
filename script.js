@@ -110,8 +110,8 @@ function showHarga(IDPenerima) {
     hargaSatuPenerima += batanganVal * hargaBatangan;
 
     if (pesan.value !== "") {
-        var pesanVal = parseInt(pesan.value);
-        hargaSatuPenerima += pesanVal * hargaPesan;
+        
+        hargaSatuPenerima += hargaPesan;
     }
 
     if (hargaSatuPenerima > 0) {
@@ -392,13 +392,15 @@ function payment() {
                                             console.log('Success:', response);
 
                                             console.log(penerimaData);
-                                            window.location.href = 'success.php';
+                                            window.location.href = 'success.php?reference=' + result.merchantOrderId;
+
                                             
                                         },
                                         error: function(jqXHR, textStatus, errorThrown) {
                                             console.log('Error:', textStatus, errorThrown);
                                             console.log(penerimaData)
-                                            window.location.href = 'failed.php';
+                                            window.location.href = 'failed.php?reference=' + result.merchantOrderId;
+
                                         }
                                     });
                                 } else {

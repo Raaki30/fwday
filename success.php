@@ -23,12 +23,23 @@
                 <div class="text-center">
                     <h1>Thank You !</h1>
                     <p>Pesanan anda telah berhasil dibuat</p>
+                    <p>Order ID: <span id="orderReference"></span></p>
                     <a href="http://localhost:8080/fwday">
                         <button class="btn btn-primary" href>Pesan Lagi</button>
                     </a>
                     
                 </div>
             </div>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const reference = urlParams.get('reference');
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tampilkan reference pada elemen dengan ID 'orderReference'
+        document.getElementById('orderReference').innerText = reference;
+    });
+</script>
+
     </body>
 
 </html>
