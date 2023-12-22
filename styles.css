@@ -1,0 +1,93 @@
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+body {
+    width: 80%;
+    margin: auto;
+}
+
+#pengirim-section {
+    background-color: #f9f9e0;
+    width: 50%;
+    margin: 20px auto;
+    /* border: 2px solid black; */
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.data-pengirim {
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
+.data-pengirim input,
+.data-pengirim select {
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 2px solid #548a92;
+}
+
+#tambah-penerima-btn {
+    position: absolute;
+    margin-top: -50px;
+    right: 20px;
+}
+
+#penerima-section {
+    overflow-x: auto;
+}
+
+table {
+    border: 2px solid black;
+    width: 100%;
+}
+th,
+td {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+textarea {
+    width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        width: 95%;
+    }
+    #pengirim-section {
+        width: 100%;
+    }
+    * {
+        font-size: 1.1rem;
+    }
+    table {
+        font-size: 1.2rem;
+    }
+    th td {
+        margin: 10px 0;
+        padding: 5px;
+    }
+}
+
+.tombol-next {
+    cursor: pointer;
+    width: 100px;
+    margin: auto;
+    border: 2px solid #548a92;
+    border-radius: 20px;
+    padding: 10px 0;
+    transition: all 0.2s;
+}
+.tombol-next:hover {
+    color: white;
+    background-color: #548a92;
+}
+
+#tombol-submit {
+    display: none;
+}
+
+
