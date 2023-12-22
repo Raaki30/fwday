@@ -139,17 +139,51 @@
                                 </select>
                             </td>
                             <td>
-                                <input type="checkbox" name="paketAPenerima1" id="paket-A" value="1" />
+                                <select name="paketAPenerima1" id="paket-A">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
                             </td>
                             <td>
-                                <input type="checkbox" name="paketBPenerima1" id="paket-B" value="1" />
+                                <select name="paketBPenerima1" id="paket-B">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
                             </td>
                             <td>
-                                <input type="checkbox" name="bouquetPenerima1" id="bouquet" value="1" />
+                                <select name="bouquetPenerima1" id="bouquet">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
                             </td>
                             <td>
-                                <input type="checkbox" name="batanganPenerima1" id="batangan" value="1" />
+                                <select name="batanganPenerima1" id="batangan">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                </select>
                             </td>
+
+
                             <td>
                                 <textarea type="text" name="pesanPenerima1" placeholder="Ketik pesanmu di sini" id="pesan" disabled></textarea>
                             </td>
@@ -247,46 +281,45 @@
 
                                 var namaPenerima1 = $('input[name="namaPenerima1"]').val();
                                 var kelasPenerima1 = $('select[name="kelasPenerima1"]').val();
-                                var paketAPenerima1 = $('input[name="paketAPenerima1"]').is(':checked') ? "1" : "";
-                                var paketBPenerima1 = $('input[name="paketBPenerima1"]').is(':checked') ? "1" : "";
-                                var bouquetPenerima1 = $('input[name="bouquetPenerima1"]').is(':checked') ? "1" : "";
-                                var batanganPenerima1 = $('input[name="batanganPenerima1"]').is(':checked') ? "1" : "";
+                                var paketAPenerima1 = $('select[name="paketAPenerima1"]').val();
+                                var paketBPenerima1 = $('select[name="paketBPenerima1"]').val();
+                                var bouquetPenerima1 = $('select[name="bouquetPenerima1"]').val();
+                                var batanganPenerima1 = $('select[name="batanganPenerima1"]').val();
                                 var pesanPenerima1 = $('textarea[name="pesanPenerima1"]').val();
 
                                 var namaPenerima2 = $('input[name="namaPenerima2"]').val();
                                 var kelasPenerima2 = $('select[name="kelasPenerima2"]').val();
-                                var paketAPenerima2 = $('input[name="paketAPenerima2"]').is(':checked') ? "1" : "";
-                                var paketBPenerima2 = $('input[name="paketBPenerima2"]').is(':checked') ? "1" : "";
-                                var bouquetPenerima2 = $('input[name="bouquetPenerima2"]').is(':checked') ? "1" : "";
-                                var batanganPenerima2 = $('input[name="batanganPenerima2"]').is(':checked') ? "1" : "";
+                                var paketAPenerima2 = $('select[name="paketAPenerima2"]').val();
+                                var paketBPenerima2 = $('select[name="paketBPenerima2"]').val();
+                                var bouquetPenerima2 = $('select[name="bouquetPenerima2"]').val();
+                                var batanganPenerima2 = $('select[name="batanganPenerima2"]').val();
                                 var pesanPenerima2 = $('textarea[name="pesanPenerima2"]').val();
+
 
                                 var namaPenerima3 = $('input[name="namaPenerima3"]').val();
                                 var kelasPenerima3 = $('select[name="kelasPenerima3"]').val();
-                                var paketAPenerima3 = $('input[name="paketAPenerima3"]').is(':checked') ? "1" : "";
-                                var paketBPenerima3 = $('input[name="paketBPenerima3"]').is(':checked') ? "1" : "";
-                                var bouquetPenerima3 = $('input[name="bouquetPenerima3"]').is(':checked') ? "1" : "";
-                                var batanganPenerima3 = $('input[name="batanganPenerima3"]').is(':checked') ? "1" : "";
+                                var paketAPenerima3 = $('select[name="paketAPenerima3"]').val();
+                                var paketBPenerima3 = $('select[name="paketBPenerima3"]').val();
+                                var bouquetPenerima3 = $('select[name="bouquetPenerima3"]').val();
+                                var batanganPenerima3 = $('select[name="batanganPenerima3"]').val();
                                 var pesanPenerima3 = $('textarea[name="pesanPenerima3"]').val();
 
                                 var namaPenerima4 = $('input[name="namaPenerima4"]').val();
                                 var kelasPenerima4 = $('select[name="kelasPenerima4"]').val();
-                                var paketAPenerima4 = $('input[name="paketAPenerima4"]').is(':checked') ? "1" : "";
-                                var paketBPenerima4 = $('input[name="paketBPenerima4"]').is(':checked') ? "1" : "";
-                                var bouquetPenerima4 = $('input[name="bouquetPenerima4"]').is(':checked') ? "1" : "";
-                                var batanganPenerima4 = $('input[name="batanganPenerima4"]').is(':checked') ? "1" : "";
+                                var paketAPenerima4 = $('select[name="paketAPenerima4"]').val();
+                                var paketBPenerima4 = $('select[name="paketBPenerima4"]').val();
+                                var bouquetPenerima4 = $('select[name="bouquetPenerima4"]').val();
+                                var batanganPenerima4 = $('select[name="batanganPenerima4"]').val();
                                 var pesanPenerima4 = $('textarea[name="pesanPenerima4"]').val();
 
                                 var namaPenerima5 = $('input[name="namaPenerima5"]').val();
                                 var kelasPenerima5 = $('select[name="kelasPenerima5"]').val();
-                                var paketAPenerima5 = $('input[name="paketAPenerima5"]').is(':checked') ? "1" : "";
-                                var paketBPenerima5 = $('input[name="paketBPenerima5"]').is(':checked') ? "1" : "";
-                                var bouquetPenerima5 = $('input[name="bouquetPenerima5"]').is(':checked') ? "1" : "";
-                                var batanganPenerima5 = $('input[name="batanganPenerima5"]').is(':checked') ? "1" : "";
+                                var paketAPenerima5 = $('select[name="paketAPenerima5"]').val();
+                                var paketBPenerima5 = $('select[name="paketBPenerima5"]').val();
+                                var bouquetPenerima5 = $('select[name="bouquetPenerima5"]').val();
+                                var batanganPenerima5 = $('select[name="batanganPenerima5"]').val();
                                 var pesanPenerima5 = $('textarea[name="pesanPenerima5"]').val();
 
-                                // Menggunakan data yang telah diambil dari masing-masing input
-                                // Anda dapat melakukan apa pun yang diperlukan dengan data ini
 
 
 
@@ -448,10 +481,51 @@
                     <option value="XII-8">XII-8</option>
                 </select>
             </td>
-            <td><input type="checkbox" name="entry.851185307" id="paket-A" value="Paket A" class="paket-penerima" /></td>
-            <td><input type="checkbox" name="entry.851185307" id="paket-B" value="Paket B" class="paket-penerima" /></td>
-            <td><input type="checkbox" name="entry.851185307" id="bouquet" value="Bouquet" /></td>
-            <td><input type="checkbox" name="entry.851185307" id="batangan" value="Batangan" /></td>
+            <td>
+                <select name="a" id="paket-A">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </td>
+            <td>
+                <select name="b" id="paket-B">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </td>
+            <td>
+                <select name="bb" id="bouquet">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </td>
+            <td>
+                <select name="bbbbb" id="batangan">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </td>
+
             <td>
                 <textarea type="text" name="entry.1519282563" placeholder="Ketik pesanmu di sini" id="pesan" disabled></textarea>
             </td>

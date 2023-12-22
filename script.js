@@ -92,47 +92,39 @@ function checkFieldsAndShowSection() {
 var hargaTotal = 0;
 
 function showHarga(IDPenerima) {
-    // define element penerima
     var elementPenerima = document.getElementById(IDPenerima);
 
-    // fetch all child  in element penerima
-    var paketAchecked = elementPenerima.querySelector("#paket-A").checked;
-    var paketBchecked = elementPenerima.querySelector("#paket-B").checked;
-    var bouquetChecked = elementPenerima.querySelector("#bouquet").checked;
-    var batanganChecked = elementPenerima.querySelector("#batangan").checked;
+    var paketAVal = parseInt(elementPenerima.querySelector("#paket-A").value);
+    var paketBVal = parseInt(elementPenerima.querySelector("#paket-B").value);
+    var bouquetVal = parseInt(elementPenerima.querySelector("#bouquet").value);
+    var batanganVal = parseInt(elementPenerima.querySelector("#batangan").value);
     var pesan = elementPenerima.querySelector("#pesan");
 
     var harga = elementPenerima.querySelector("#harga");
 
     var hargaSatuPenerima = 0;
 
-    if (paketAchecked) {
-        hargaSatuPenerima += hargaPaketA;
-    }
-    if (paketBchecked) {
-        hargaSatuPenerima += hargaPaketB;
-    }
-    if (bouquetChecked) {
-        hargaSatuPenerima += hargaBouquet;
-    }
-    if (batanganChecked) {
-        hargaSatuPenerima += hargaBatangan;
+    hargaSatuPenerima += paketAVal * hargaPaketA;
+    hargaSatuPenerima += paketBVal * hargaPaketB;
+    hargaSatuPenerima += bouquetVal * hargaBouquet;
+    hargaSatuPenerima += batanganVal * hargaBatangan;
+
+    if (pesan.value !== "") {
+        var pesanVal = parseInt(pesan.value);
+        hargaSatuPenerima += pesanVal * hargaPesan;
     }
 
-    if (paketAchecked || paketBchecked || bouquetChecked || batanganChecked) {
+    if (hargaSatuPenerima > 0) {
         pesan.removeAttribute("disabled");
-    }
-    if (!paketAchecked && !paketBchecked && !bouquetChecked && !batanganChecked) {
+    } else {
         pesan.setAttribute("disabled", "");
     }
-    if (pesan.value != "") {
-        hargaSatuPenerima += hargaPesan;
-        // hargaTotal += hargaPesan;
-    }
 
-    // console.log(hargaTotal);
     harga.textContent = `${hargaSatuPenerima}`;
 }
+
+
+
 
 function showHargaKeseluruhan() {
     hargaTotal = 0;
