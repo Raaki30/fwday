@@ -162,11 +162,11 @@
                 <input type="hidden" name="amount" id="amount" value="">
                 <label>Pilih Metode Pembayaran</label>
 					<select id="paymentMethod" class="form-control">
-						<option value="SP">QRIS</option>
-						<option value="BC">VA BCA</option>
-                        <option value="M2">VA MANDIRI</option>
-                        <option value="I1">VA BNI</option>
-                        <option value="B1">VA CIMB NIAGA</option>
+						<option value="SP">QRIS + biaya transaksi Rp. 0</option>
+						<option value="BC">VA BCA + biaya transaksi Rp. 5000</option>
+                        <option value="M2">VA MANDIRI + biaya transaksi Rp. 3000</option>
+                        <option value="I1">VA BNI + biaya transaksi Rp. 3000</option>
+                        <option value="B1">VA CIMB NIAGA + biaya transaksi Rp. 3000</option>
                         
 					</select>
                     <input type="checkbox" id="terms" name="terms" value="agree" required>
