@@ -23,8 +23,8 @@ $merchantOrderId    = $orderid; // from merchant, unique
 $additionalParam    = ''; // optional
 $merchantUserInfo   = ''; // optional
 $customerVaName     = $namaPengirim; // display name on bank confirmation display
-$callbackUrl        = 'http://localhost:8080/flowers-day-gform-main/callback.php'; // url for callback
-$returnUrl          = 'http://localhost:8080/flowers-day-gform-main/return.php'; // url for redirect
+$callbackUrl        = 'http://localhost:8080/fwday/callback.php'; // url for callback
+$returnUrl          = 'http://localhost:8080/fwday/return.php'; // url for redirect
 $expiryPeriod       = 60; // set the expired time in minutes
 
 // Customer Detail
