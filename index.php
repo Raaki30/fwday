@@ -9,6 +9,10 @@
         <link rel="icon" type="image/x-icon" href="https://w7.pngwing.com/pngs/353/677/png-transparent-flower-favicon-pink-pink-flower-s-purple-blue-symmetry.png">
 
         <script src="https://app-sandbox.duitku.com/lib/js/duitku.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+        <script src="https://cdn.jsdelivr.net/es6-promise/latest/es6-promise.auto.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
     </head>
     <body>
 
