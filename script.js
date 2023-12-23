@@ -1,3 +1,12 @@
+$(document).ready(function() {
+    swal({
+        title: "Informasi Penting",
+        text: "Tidak ramah IOS (utk sekarang)",
+        icon: "info",
+        button: "Lanjutkan",
+    });
+});
+
 // HARGA ALL ITEMS
 var hargaPaketA = 20000;
 var hargaPaketB = 25000;
@@ -5,53 +14,9 @@ var hargaBouquet = 15000;
 var hargaBatangan = 10000;
 var hargaPesan = 5000;
 
-var jumlahPenerima = 1;
+var jumlahPenerima = 0;
 
-// var GFormsPengirimName = {
-// //     // Data Pengirim
-//     emailPengirim: "entry.1592840593",
-//     nomorTeleponPengirim: "entry.812587699",
-//     namaPengirim: "entry.287391154",
-//     kelasPengirim: "entry.2133329921",
 
-// //     // Data Penerima 1
-// //     namaPenerima1: "entry.1336288915",
-// //     kelasPenerima1: "entry.1967255455",
-// //     paketPenerima1: "entry.851185307",
-// //     pesanPenerima1: "entry.1519282563",
-
-// //     // Data Penerima 2
-// //     namaPengirim2: "entry.1352286003",
-// //     kelasPengirim2: "entry.508962244",
-// //     namaPenerima2: "entry.1016256525",
-// //     kelasPenerima2: "entry.821868320",
-// //     paketPenerima2: "entry.1083087706",
-// //     pesanPenerima2: "entry.551598349",
-
-// //     // Data Penerima 3
-// //     namaPengirim3: "entry.1978832972",
-// //     kelasPengirim3: "entry.1235934584",
-// //     namaPenerima3: "entry.148643492",
-// //     kelasPenerima3: "entry.1810191057",
-// //     paketPenerima3: "entry.938679024",
-// //     pesanPenerima3: "entry.1776113027",
-
-// //     // Data Penerima 4
-// //     namaPengirim4: "entry.747980189",
-// //     kelasPengirim4: "entry.376659577",
-// //     namaPenerima4: "entry.165216699",
-// //     kelasPenerima4: "entry.1379831424",
-// //     paketPenerima4: "entry.1701338243",
-// //     pesanPenerima4: "entry.659937213",
-
-// //     // Data Penerima 5
-// //     namaPengirim5: "entry.2135190722",
-// //     kelasPengirim5: "entry.1892512620",
-// //     namaPenerima5: "entry.515182497",
-// //     kelasPenerima5: "entry.866986164",
-// //     paketPenerima5: "entry.61340545",
-// //     pesanPenerima5: "entry.734914188",
-// };
 
 function checkFieldsAndShowSection() {
     // Dapatkan elemen input dan section
@@ -64,7 +29,7 @@ function checkFieldsAndShowSection() {
     
 
     // Periksa apakah semua field telah diisi
-    if (namaPengirim.value !== "" && kelasPengirim.value !== "" && emailPengirim.value !== "" && nomorTeleponPengirim.value !== "") {
+    if (namaPengirim.value !== "" && kelasPengirim.value !== "" && emailPengirim.value !== "" && emailPengirim.value.includes('@') && emailPengirim.value.includes('.') && nomorTeleponPengirim.value !== "" && nomorTeleponPengirim.value.length >= 7 && nomorTeleponPengirim.value.length <= 15) {
         // Jika semua field telah diisi, tampilkan section penerima
         penerimaSection.style.display = "";
         document.querySelector(".tombol-next").style.display = "none";
@@ -76,8 +41,10 @@ function checkFieldsAndShowSection() {
         
     } else {
         // Jika tidak, beri peringatan kepada pengguna
-        alert("Harap isi semua field data pengirim sebelum melanjutkan.");
+        alert("Harap isi semua field data pengirim dengan benar");
     }
+
+    
 }
 
 
@@ -136,7 +103,7 @@ function showHargaKeseluruhan() {
             hargaTotal += Number(hargaElements[i].textContent);
         }
     }
-    totalHargaElement.textContent = ` Rp.${hargaTotal.toLocaleString("id-ID")}`;
+    totalHargaElement.textContent = ` Rp. ${hargaTotal.toLocaleString("id-ID")}`;
 }
 
 // Gunakan loop for untuk menjumlahkan semua elemen "harga"
@@ -169,7 +136,7 @@ function addPenerima() {
         removeButton.setAttribute("onclick", `removePenerima('penerima-${jumlahPenerima}')`);
         removeButton.setAttribute("id", `remove-button-${jumlahPenerima}`);
 
-        // GOOGLE FORMS THINGY WITH THE NAME
+        // NEW TR NAME
 
 
         var namaPenerima = newTr.querySelector("#nama-penerima");
@@ -180,16 +147,7 @@ function addPenerima() {
         var batanganPenerima = newTr.querySelector("#batangan");
         var pesanPenerima = newTr.querySelector("#pesan");
 
-        // Testing in console
-
-
-        // console.log(namaPenerima);
-        // console.log(kelasPenerima);
-        // console.log(paketPenerimaA);
-        // console.log(paketPenerimaB);
-        // console.log(bouquetPenerima);
-        // console.log(batanganPenerima);
-        // console.log(pesanPenerima);
+    
         // EDIT ATTRIBUTE NAME
 
 
@@ -205,7 +163,7 @@ function addPenerima() {
 
 
     } else if (jumlahPenerima >= 5) {
-        alert("Maaf, jumlah penerima setiap transaksi maksimal sebanyak 5 orang. Silahkan selesaikan transaksi ini terlebih dahulu, lalu ulangi lagi dari awal dengan penerima yang berbeda.");
+        alert("Maaf, jumlah penerima setiap transaksi maksimal sebanyak 5 orang");
     }
 }
 
@@ -215,10 +173,11 @@ function removePenerima(IDPenerima) {
     hargaTotal -= Number(hargaPenerima.textContent);
 
     var totalHargaElement = document.querySelector("#total-harga-keseluruhan");
-    totalHargaElement.textContent = ` Rp.${hargaTotal.toLocaleString("id-ID")}`;
+    totalHargaElement.textContent = ` Rp. ${hargaTotal.toLocaleString("id-ID")}`;
 
     penerima.parentNode.removeChild(penerima);
     penerima.remove();
+    jumlahPenerima -= 1;
 }
 
 var submitted = false;

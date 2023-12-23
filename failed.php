@@ -6,6 +6,7 @@
     <title>Gagal</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://w7.pngwing.com/pngs/353/677/png-transparent-flower-favicon-pink-pink-flower-s-purple-blue-symmetry.png">
 </head>
 <body>
 <div class="vh-100 d-flex justify-content-center align-items-center">
@@ -23,7 +24,7 @@
                     <a href="mailto:support@fwday.com">
                         <button class="btn btn-primary" href>Kontak Kami</button>
                     </a>
-                    <a href="http://localhost:8080/fwday">
+                    <a href="index.html">
                         <button class="btn btn-primary" href>Back Home</button>
                     </a>
                     

@@ -24,7 +24,7 @@
                     <h1>Thank You !</h1>
                     <p>Pesanan anda telah berhasil dibuat</p>
                     <p>Order ID: <span id="orderReference"></span></p>
-                    <a href="http://localhost:8080/fwday">
+                    <a href="index.html">
                         <button class="btn btn-primary" href>Pesan Lagi</button>
                     </a>
                     

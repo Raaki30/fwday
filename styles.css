@@ -5,6 +5,7 @@ input[type="checkbox"] {
 body {
     width: 80%;
     margin: auto;
+    
 }
 
 #pengirim-section {
@@ -32,7 +33,7 @@ body {
 #tambah-penerima-btn {
     position: absolute;
     margin-top: -50px;
-    right: 20px;
+    right: 150px;
 }
 
 #penerima-section {
@@ -42,11 +43,15 @@ body {
 table {
     border: 2px solid black;
     width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 th,
 td {
     border: 2px solid black;
     padding: 5px;
+    
 }
 
 textarea {
@@ -55,20 +60,36 @@ textarea {
 
 @media screen and (max-width: 768px) {
     body {
-        width: 95%;
+        width: 90%;
     }
     #pengirim-section {
         width: 100%;
     }
-    * {
-        font-size: 1.1rem;
-    }
+    
     table {
-        font-size: 1.2rem;
+        display: block;
+        font-size: 14px;
+        width: 100%;
+        
     }
     th td {
         margin: 10px 0;
         padding: 5px;
+        font-size: 14px;
+        
+    }
+    th{
+        border-bottom: none;
+    }
+
+    #tambah-penerima-btn {
+        width: 200px;
+        position: absolute;
+        margin-top: -50px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -89,3 +110,4 @@ textarea {
 #tombol-submit {
     display: none;
 }
+

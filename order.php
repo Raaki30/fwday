@@ -6,22 +6,25 @@
         <title>Flowers Day 2024</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
         <link rel="stylesheet" href="styles.css" />
-        <link rel="icon" type="image/x-icon" href="https://w7.pngwing.com/pngs/353/677/png-transparent-flower-favicon-pink-pink-flower-s-purple-blue-symmetry.png">
+        <link rel="icon" type="image/x-icon" href="bunga.png">
 
         <script src="https://app-sandbox.duitku.com/lib/js/duitku.js"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
         <script src="https://cdn.jsdelivr.net/es6-promise/latest/es6-promise.auto.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+        <meta name="apple-mobile-app-capable" content="yes">
+        <meta name="apple-mobile-app-status-bar-style" content="black">
+        
     </head>
     <body>
 
         
 
-        <script type="text/javascript">
-            var submitted = false;
-        </script>
-        <iframe name="hiddenConfirm" id="hiddenConfirm" style="display: none" onload="if(submitted){window.location='submitted.html';}"></iframe>
+       
+        <br><br>
         <h1 class="text-center">Flowers Day 2024</h1>
         <form onsubmit="submitted=true" id="form">
             
@@ -72,15 +75,17 @@
                 </div>
                 <div class="data-pengirim">
                     <!-- <label for="nomor-telepon-pengirim"></label> -->
-                    <input type="number" name="nomorTeleponPengirim" id="nomorTeleponPengirim" placeholder="No HP Pengirim" required />
+                    <input type="number" name="nomorTeleponPengirim" id="nomorTeleponPengirim" placeholder="No HP Pengirim" required minlength="7" maxlength="15" />
                 </div>
                 <div class="data-pengirim" onclick="checkFieldsAndShowSection()">
                     <div class="tombol-next"  style="display: block">Next</div>
                 </div>
             </section>
+            <br><br>
             <section id="penerima-section" style="display: none">
             <button id="tambah-penerima-btn" onclick="addPenerima()" class="btn btn-warning" style="display: none">+ tambah penerima</button> 
-                <table class="" id="all-penerima">
+            
+                <table class="" id="all-penerima" >
                     <tbody class="overflow-scroll text-center" onchange="showHargaKeseluruhan()">
                         <tr>
                             <th>Nama Penerima</th>
@@ -108,7 +113,7 @@
                             <th>Total Harga <br /></th>
                             <th>Ket.</th>
                         </tr>
-                        <tr id="penerima-1" onchange="showHarga('penerima-1')">
+                        <!-- <tr id="penerima-1" onchange="showHarga('penerima-1')">
                             <td>
                                 <input type="text" placeholder="Ketik nama di sini" id="nama-penerima" name="namaPenerima1" required />
                             </td>
@@ -189,17 +194,20 @@
 
 
                             <td>
-                                <textarea type="text" name="pesanPenerima1" placeholder="Ketik pesanmu di sini" id="pesan" disabled></textarea>
+                                <textarea type="text" name="pesanPenerima1" placeholder="Ketik pesanmu di sini" id="pesan" disabled maxlength="250"></textarea>
                             </td>
                             <td><span id="harga">-</span></td>
                             <td>-</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
+            
+                <br>
                 <h3 class="">Total Harga:<span id="total-harga-keseluruhan">-</span></h3>
                 <input type="hidden" name="amount" id="amount" value="">
                 <label>Pilih Metode Pembayaran</label>
 					<select id="paymentMethod" class="form-control">
+                        <option value="">Pilih Metode Pembayaran</option>
 						<option value="SP">QRIS + biaya transaksi Rp. 0</option>
 						<option value="BC">VA BCA + biaya transaksi Rp. 5000</option>
                         <option value="M2">VA MANDIRI + biaya transaksi Rp. 3000</option>
@@ -207,18 +215,46 @@
                         <option value="B1">VA CIMB NIAGA + biaya transaksi Rp. 3000</option>
                         
 					</select>
+                    
+                    <br>
+                    <div class="checkbox-container" style="padding-left: 2px;">
                     <input type="checkbox" id="terms" name="terms" value="agree" required>
                     <label for="terms">Saya telah menyetujui seluruh syarat dan ketentuan yang berlaku</label>
+                    </div>
                     <input type="hidden" name="reference" id="reference" value="">
                 <button type="button" onclick="payment()" class="btn btn-primary w-100 my-2 shadow" id="purchase">Purchase</button>
                     <input type="submit" name="" id="tombol-submit" style="display: none" />
             </section>
         </form>
+        <br><br>
         
         
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         
-        
+        <script>
+           
+            document.getElementById('paymentMethod').addEventListener('change', function() {
+                
+                var additionalFee = 0;
+
+                switch(this.value) {
+                    case 'SP':
+                        additionalFee = 0;
+                        break;
+                    case 'BC':
+                        additionalFee = 5000;
+                        break;
+                    case 'I1':
+                    case 'M2':
+                    case 'B1':
+                        additionalFee = 3000;
+                        break;
+                }
+                var totalPrice = hargaTotal + additionalFee;
+                var formattedTotalPrice = totalPrice.toLocaleString('id-ID', {minimumFractionDigits: 0});
+                document.getElementById('total-harga-keseluruhan').innerText = ' Rp. ' + formattedTotalPrice;
+            });
+        </script>
            
     </body>
     <template id="template-penerima">
