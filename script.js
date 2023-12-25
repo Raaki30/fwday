@@ -44,6 +44,8 @@ function checkFieldsAndShowSection() {
         alert("Harap isi semua field data pengirim dengan benar");
     }
 
+    addPenerima();
+
     
 }
 
@@ -409,7 +411,7 @@ function payment() {
                             },
                         });
                     } else {
-                        // User clicked 'Cancel', do nothing
+                        
                     }
                 });
 
