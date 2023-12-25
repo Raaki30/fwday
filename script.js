@@ -1,7 +1,7 @@
 $(document).ready(function() {
     swal({
         title: "Informasi Penting",
-        text: "Tidak ramah IOS (utk sekarang)",
+        text: "Halo",
         icon: "info",
         button: "Lanjutkan",
     });
