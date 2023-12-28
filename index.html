@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home</title>
-        <link rel="icon" type="image/x-icon" href="bunga.png">
+        <link rel="icon" type="image/x-icon" href="img/bunga.png">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
         <style>
 
             body{
@@ -52,9 +55,9 @@
                     display: none;
                 }
                 
-                .logo-bunga{
+                /* .mobile-logo/bunga.png{
                     display: block;
-                }
+                } */
             }
 
             #btn-back-to-top {
@@ -62,6 +65,7 @@
                 bottom: 20px;
                 right: 20px;
                 display: none;
+                z-index: 1000;
             }
 
             .mobile-logo {
@@ -75,6 +79,91 @@
                     
                 }
             }
+
+            .card-body {
+                text-align: center;
+            }
+
+            .btn-primary {
+                background-color: #ff7f7f; /* A soft pink color */
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                border-radius: 12px;
+            }
+
+            .btn-primary:hover {
+                background-color: #ff4d4d; /* A darker pink color */
+                color: white;
+            }
+
+            #tutorial {
+                background-color: #f8f9fa; /* Light gray background */
+                padding: 50px 0;
+            }
+
+            #tutorial h1 {
+                color: #6c757d; /* Dark gray color */
+                font-size: 2.5em;
+                margin-bottom: 50px;
+            }
+
+            #tutorial .card {
+                
+                border: none;
+                height: 450px;
+                
+            }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+            .card {
+                border-radius: 20px;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                transition: 0.3s;
+            }
+
+            #tutorial .card-body {
+                padding: 20px;
+                
+                
+                
+            }
+            
+
+            #tutorial .card-title {
+                color: #6c757d; /* Dark gray color */
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            #tutorial .card-text {
+                color: #6c757d; /* Dark gray color */
+                line-height: 1.5;
+            }
+
+            @media screen and (max-width: 768px) {
+                #tutorial .card {
+                    margin-bottom: 30px;
+                }
+
+                
+
+                #produk .card {
+                    margin-bottom: 30px;
+                }
+            }
+
+           
 
            
 
@@ -95,11 +184,11 @@
         </button>
         <br>
         <div style="display: flex; justify-content: center; align-items: center; ">
-        <img class="mobile-logo" src="bunga.png" alt="" width="80px">
+        <img class="mobile-logo" src="img/bunga.png" alt="" width="80px">
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <img src="bunga.png" alt="" srcset="" style="height:40px; margin-right:20px;">
+                <img src="img/bunga.png" alt="" srcset="" style="height:40px; margin-right:20px;">
                 <!-- <a class="navbar-brand" href="#">Flowers Day</a> -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -124,7 +213,7 @@
         <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
               <div class="col-10 col-sm-8 col-lg-6">
-                <img src="friends.jpeg" class="d-block mx-lg-auto img-fluid rounded shadow-lg bold-shadow" alt="Gambar" width="700" height="500" loading="lazy">
+                <img src="img/friends.jpeg" class="d-block mx-lg-auto img-fluid rounded shadow-lg bold-shadow" alt="Gambar" width="700" height="500" loading="lazy">
               </div>
               <div class="col-lg-6">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Beri kejutan pada</h1> 
@@ -140,12 +229,113 @@
             </div>
           </div>
     </div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#96AB9A" fill-opacity="1" d="M0,192L80,160C160,128,320,64,480,42.7C640,21,800,43,960,80C1120,117,1280,171,1360,197.3L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
-        </svg>
-        
-
+        </svg> -->
+    
+    <section id="produk" style="background-color: #D4CFB4;">
+        <br><br>
+        <div class="container">
+            <h1 style="text-align: center; font-family: 'Cute Font', sans-serif; font-size: 75px; ">Produk Kami</h1>
+        </div>
+        <br>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/placeholder.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Paket A</h5>
+                            <p class="card-text">Detail :</p>
+                            <p class="card-text">okok</p>
+                            <a class="btn btn-primary">Rp. 20.000</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/placeholder.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Paket B</h5>
+                            <p class="card-text">Detail :</p>
+                            <p class="card-text">okok</p>
+                            <a class="btn btn-primary">Rp. 15.000</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img/placeholder.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Bouquet</h5>
+                            <p class="card-text">Detail :</p>
+                            <p class="card-text">okok</p>
+                            <a class="btn btn-primary">Rp. 10.000</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 200px;"></div>
+    </section>
+    
+<section id="tutorial">
+    <br><br>
+    <div class="container">
+        <h1 style="text-align: center; font-family: 'Cute Font', sans-serif; font-size: 75px; ">Cara Pembelian</h1>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Langkah 1</h5>
+                        <img src="img/tutorial/1-pengirim.png" alt="" width="100%">
+                        <b class="card-text">Isi data pengirim</b>
+                        <p class="card-text">Jika akan mengirim secara anonimus, silahkan isi pada nama "anonymous"</p>
+                    </div>
+                </div>
+            </div>
             
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body" >
+                        <h5 class="card-title">Langkah 2</h5>
+                        <img src="img/tutorial/2-penerima.png" alt="" width="100%">
+                        
+                        <b class="card-text">Isi data penerima</b>
+                        <p class="card-text">Pilih produk yang akan kamu berikan kepada penerima. Klik tambah penerima untuk menambah penerima yang lain</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Langkah 3</h5>
+                        <img src="img/tutorial/3-bayar.png" alt="" width="100%">
+                        <b class="card-text">Bayar</b>
+                        <p class="card-text">Pilih metode pembayaran dan ikuti petunjuk pembayaran berikutnya</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 50px;"></div>
+        <p class="card-text" style="text-align: center;">Kami menerima Pembayaran</p>
+        <div class="container" style="text-align: center; ">
+            <img src="img/pay-logo/qris.png" alt="" width="100px">
+            <img src="img/pay-logo/gopay.png" alt="" width="100px">
+            <img src="img/pay-logo/bca.png" alt="" width="100px">
+        </div>
+    </div>
+    <div style="height: 50px;"></div>
+</section>
+
+    
+    
+
     
 
 
